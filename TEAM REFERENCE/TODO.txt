@@ -1,0 +1,7 @@
+ - euler tour 
+ - actualizar algoritmos de grafos a dentro de las estructuras
+ - ampliar el matrix exponentiation
+ - probar los algoritmos segment intersection y mas e incluirlos en el reference
+ - implementar y probar el kosaraju
+ - probar los stirling numbers ya implementados 
+ - implementar los bell numbers

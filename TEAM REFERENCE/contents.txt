@@ -1,0 +1,72 @@
+# Any line followed by a '#' character is ignored
+# Section headings must be in square brackets
+# Subsections within a section should follow the format:
+#   [filename within code directory][tab character \t][subsection title]
+
+[Matem\'atica]
+mod_inv.cpp	Exponenciaci\'on e Inverso Modular 
+matrix.h	Trabajo con Matrices
+fast_rec.cpp	Resoluci\'on Recurrencias Lineales en $O(K^3log(N))$
+number_theory.cpp	Criba y Funciones de Teor\'ia de N\'umeros
+euclides.cpp	Algoritmo de Euclides Extendido
+crt.cpp	Teorema Chino del Resto
+
+[Manipulaci\'on de Bits]
+bits.cpp	Metodos para Manipular Bits
+bit_trie.h	Trie de Bits
+
+[Combinatoria]
+perm_id_and_nth_perm_tested.cpp	Permutaciones: orden y n-\'esima
+pascal.cpp	Combinaciones $O(n^2)$ 
+
+[Grafos]
+dijkstra_tested.cpp	Dijkstra's Algorithm
+spfa.cpp	SPFA + Small-Label-First Optimization
+bellman_ford.cpp	Bellman-Ford Algorithm
+kahn_tested.cpp	Kahn's Algorithm
+tree_diam.cpp	Di\'ametro de un \'Arbol
+diametro_y_camino.cpp	Di\'ametro de un \'Arbol Construido
+tarjan_scc.cpp	Tarjan's SCC Algorithm
+
+[\'Arboles]
+lca.h	Lowest Common Ancestor
+centroid.cpp	Centroid Decomposition
+
+[Matching y Flujo]
+fordfulk.h	Ford-Fulkerson $O(E^2 \cdot log(c))$
+
+[Estructuras de Datos]
+union_find.cpp	Union-Find
+ds_queue.h	Cola que Soporta la Operaci\'on M\'aximo en $O(1)$
+ordered_set_tested.cpp	Set con Order Statics
+taccum.h	Tabla Acumulativa de Dos Dimensiones
+rmq.h	Range Min-Max Query
+wavelet.h	Wavelet Tree
+mo.h	Mo's Algorithm
+fenwick.h	Fenwick Tree
+
+[Strings]
+kmp.cpp	Knuth-Morris-Pratt Algorithm
+z.cpp	Funci\'on Z
+suffix_array.cpp	Suffix Array en $O(n * log^{2}(n))$
+suffix_tree.cpp	Suffix Tree Impl\'icito en $O(n * log^{2}(n))$
+hasher.h	Hashing para Cadenas
+palindromizer.h	Palindromizer
+aho_corasick.h	Aho-Corasick Algorithm
+trie.h	ReTRIEval Tree
+fact_dict.cpp	Dictionary Of Basic Factors en $O(n * log^{2}(n))$
+manachar.cpp	Manachar's Algorithm
+eertree.cpp	Palindromic Tree
+
+[Geometr\'ia]
+geo2d.h	Geometry Library
+closest_pp_sweep_line.cpp	Par de Puntos M\'as Cercanos (Sweep Line)
+sweep_line_union_area.cpp	Union \'Area (Sweep Line)
+
+[Utilidades]
+debug.cpp	Funcion Debug
+math_exp_tested.java	Procesar Expresiones Matem\'aticas 
+parse_line.cpp	Parsear una L\'inea Completa a Enteros
+medir.cpp	Tiempo Real de Ejecici\'on de un Fragmento de C\'odigo 
+compile_line.h	L\'inea de Compilaci\'on M\'as Restrictiva
+stack_size.cpp	Stack Size

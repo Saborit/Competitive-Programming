@@ -1,0 +1,58 @@
+\BOOKMARK [1][-]{section.1}{Matem\341tica}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Exponenciaci\363n e Inverso Modular}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Trabajo con Matrices}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Resoluci\363n Recurrencias Lineales en O\(K3log\(N\)\)}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{Criba y Funciones de Teor\355a de N\372meros}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.5}{Algoritmo de Euclides Extendido}{section.1}% 6
+\BOOKMARK [2][-]{subsection.1.6}{Teorema Chino del Resto}{section.1}% 7
+\BOOKMARK [1][-]{section.2}{Manipulaci\363n de Bits}{}% 8
+\BOOKMARK [2][-]{subsection.2.1}{Metodos para Manipular Bits}{section.2}% 9
+\BOOKMARK [2][-]{subsection.2.2}{Trie de Bits}{section.2}% 10
+\BOOKMARK [1][-]{section.3}{Combinatoria}{}% 11
+\BOOKMARK [2][-]{subsection.3.1}{Permutaciones: orden y n-\351sima}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.2}{Combinaciones O\(n2\)}{section.3}% 13
+\BOOKMARK [1][-]{section.4}{Grafos}{}% 14
+\BOOKMARK [2][-]{subsection.4.1}{Dijkstra's Algorithm}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.2}{SPFA + Small-Label-First Optimization}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.3}{Bellman-Ford Algorithm}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.4}{Kahn's Algorithm}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.5}{Di\341metro de un \301rbol}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.6}{Di\341metro de un \301rbol Construido}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.7}{Tarjan's SCC Algorithm}{section.4}% 21
+\BOOKMARK [1][-]{section.5}{\301rboles}{}% 22
+\BOOKMARK [2][-]{subsection.5.1}{Lowest Common Ancestor}{section.5}% 23
+\BOOKMARK [2][-]{subsection.5.2}{Centroid Decomposition}{section.5}% 24
+\BOOKMARK [1][-]{section.6}{Matching y Flujo}{}% 25
+\BOOKMARK [2][-]{subsection.6.1}{Ford-Fulkerson O\(E2 log\(c\)\)}{section.6}% 26
+\BOOKMARK [1][-]{section.7}{Estructuras de Datos}{}% 27
+\BOOKMARK [2][-]{subsection.7.1}{Union-Find}{section.7}% 28
+\BOOKMARK [2][-]{subsection.7.2}{Cola que Soporta la Operaci\363n M\341ximo en O\(1\)}{section.7}% 29
+\BOOKMARK [2][-]{subsection.7.3}{Set con Order Statics}{section.7}% 30
+\BOOKMARK [2][-]{subsection.7.4}{Tabla Acumulativa de Dos Dimensiones}{section.7}% 31
+\BOOKMARK [2][-]{subsection.7.5}{Range Min-Max Query}{section.7}% 32
+\BOOKMARK [2][-]{subsection.7.6}{Wavelet Tree}{section.7}% 33
+\BOOKMARK [2][-]{subsection.7.7}{Mo's Algorithm}{section.7}% 34
+\BOOKMARK [2][-]{subsection.7.8}{Fenwick Tree}{section.7}% 35
+\BOOKMARK [1][-]{section.8}{Strings}{}% 36
+\BOOKMARK [2][-]{subsection.8.1}{Knuth-Morris-Pratt Algorithm}{section.8}% 37
+\BOOKMARK [2][-]{subsection.8.2}{Funci\363n Z}{section.8}% 38
+\BOOKMARK [2][-]{subsection.8.3}{Suffix Array en O\(n * log2\(n\)\)}{section.8}% 39
+\BOOKMARK [2][-]{subsection.8.4}{Suffix Tree Impl\355cito en O\(n * log2\(n\)\)}{section.8}% 40
+\BOOKMARK [2][-]{subsection.8.5}{Hashing para Cadenas}{section.8}% 41
+\BOOKMARK [2][-]{subsection.8.6}{Palindromizer}{section.8}% 42
+\BOOKMARK [2][-]{subsection.8.7}{Aho-Corasick Algorithm}{section.8}% 43
+\BOOKMARK [2][-]{subsection.8.8}{ReTRIEval Tree}{section.8}% 44
+\BOOKMARK [2][-]{subsection.8.9}{Dictionary Of Basic Factors en O\(n * log2\(n\)\)}{section.8}% 45
+\BOOKMARK [2][-]{subsection.8.10}{Manachar's Algorithm}{section.8}% 46
+\BOOKMARK [2][-]{subsection.8.11}{Palindromic Tree}{section.8}% 47
+\BOOKMARK [1][-]{section.9}{Geometr\355a}{}% 48
+\BOOKMARK [2][-]{subsection.9.1}{Geometry Library}{section.9}% 49
+\BOOKMARK [2][-]{subsection.9.2}{Par de Puntos M\341s Cercanos \(Sweep Line\)}{section.9}% 50
+\BOOKMARK [2][-]{subsection.9.3}{Union \301rea \(Sweep Line\)}{section.9}% 51
+\BOOKMARK [1][-]{section.10}{Utilidades}{}% 52
+\BOOKMARK [2][-]{subsection.10.1}{Funcion Debug}{section.10}% 53
+\BOOKMARK [2][-]{subsection.10.2}{Procesar Expresiones Matem\341ticas}{section.10}% 54
+\BOOKMARK [2][-]{subsection.10.3}{Parsear una L\355nea Completa a Enteros}{section.10}% 55
+\BOOKMARK [2][-]{subsection.10.4}{Tiempo Real de Ejecici\363n de un Fragmento de C\363digo}{section.10}% 56
+\BOOKMARK [2][-]{subsection.10.5}{L\355nea de Compilaci\363n M\341s Restrictiva}{section.10}% 57
+\BOOKMARK [2][-]{subsection.10.6}{Stack Size}{section.10}% 58
