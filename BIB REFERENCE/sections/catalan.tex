@@ -1,0 +1,30 @@
+\begin{itemize}
+	\item{
+		$cat(n)$  cuenta:
+		
+		\begin{itemize}
+			\item{el n\'umero de expresiones que contienen $n$ pares de par\'entesis que 
+				est\'an correctamente parentizados.}
+			\item{la cantidad de formas en las que $n+1$ factores pueden ser parentizados.}
+		    \item{el n\'umero de formas en las que un pol\'igono de $n+2$ lados puede ser triangulado}
+		    \item{ la cantidad de caminos mon\'otonicos a trav\'es de los bordes de las casillas de una matriz de $n \times n$
+				y que no van a trav\'es de su diagonal.}
+			\item{el n\'umero de formas de unir $2 n$ puntos sobre una circunferencia a la misma distancia, de
+				forma que las cuerdas no se intersecten.}
+			\item{la  de formas de colocar los n\'umeros $1, 2, .., {2n}$ en una matriz monotona de $2 \times n$. Una
+				matriz es monotona si los valores crecen dentro de cada columna y dentro de cada fila.}
+			\item{Sup\'ongase que se tira una moneda $2 n$ veces y que el resultado es ``head" exactamente $n$ veces 
+				y ``tail" exactamente $n$ veces. El n\'umero de secuencias de lances en las que el n\'umero acumulado 
+				de heads es siempre al menos tan grande como el n\'umero acumulado de tails es $cat(n)$. Por ejemplo,
+				para $n=3$ tenemos HTHTHT, HTHHTT, HHTTHT, HHTHTT, HHHTTT}
+			\item{En el ejemplo anterior, la cantidad de secuencias de lances en las que el n\'umero acumulado de 
+				heads siempre excede el n\'umero acumulado de tails hasta el \'ultimo lance es $cat( {n} {-1}) $. Para $n=3$ 
+				tenemos HHTHTT, HHHTTT. }	
+		\end{itemize}
+	}
+	\item{
+		Dos f\'ormulas para calcularlos: una cerrada y la otra recursiva:
+		$$cat(n) = \frac{C^{2n}_n}{n+1}$$
+		$$cat(n+1) = \frac{4n+2}{n+2} cat(n), cat(0) = 1$$
+	}
+\end{itemize}

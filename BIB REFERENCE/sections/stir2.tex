@@ -1,0 +1,102 @@
+\begin{itemize}
+    \item{
+		El n\'umero de Striling de segundo tipo
+		$\left\{\begin{smallmatrix}
+			n\\
+			k
+		\end{smallmatrix}\right\}$
+		cuenta el n\'umero de formas de particionar un conjunto de $n$ objetos en $k$ subconjuntos no vac\'ios. 
+		Hay solo una forma de poner $n$ elementos en un solo conjunto no vac\'io, y solo una forma de 
+		distribuirlos en $n$ subconjuntos, por tanto, 
+		$\left\{\begin{smallmatrix}
+			n\\
+			1
+		\end{smallmatrix}\right\} 
+		= 
+		\left\{\begin{smallmatrix}
+			n\\
+			n
+		\end{smallmatrix}\right\}
+		= 1$
+		para toda $n > 0$. 
+		
+		Por otro lado  
+		$\left\{\begin{smallmatrix}
+			0\\
+			1
+		\end{smallmatrix}\right\} = 0$ porque tal subconjunto est\'a vac\'io. 
+		
+		Por acuerdo se toma
+		$\left\{\begin{smallmatrix}
+			0\\
+			0
+		\end{smallmatrix}\right\} = 1$;
+		y como un conjunto no vac\'io necesita al menos una parte
+		$\left\{\begin{smallmatrix}
+			n\\
+			0
+		\end{smallmatrix}\right\} = 0$ para todo $n>0$.	
+    }
+    \item{
+       Dado un conjunto de $n > 0$ elementos para ser particionados en $k$ subconjuntos no vac\'ios de 
+       $\left\{\begin{smallmatrix}
+			n\\
+			k
+		\end{smallmatrix}\right\}$
+	   maneras, podemos, o poner el \'ultimo objeto en un nuevo subconjunto formado por \'el mismo 
+	   (esto se puede hacer de 
+       $\left\{\begin{smallmatrix}
+			n - 1\\
+			k - 1
+		\end{smallmatrix}\right\}$
+	   formas), o lo colocamos en alguno de los conjuntos formados con los $n-1$ primeros objetos.  
+	   Esto \'ultimo se puede hacer de 
+	   $k
+	   \left\{\begin{smallmatrix}
+			n - 1\\
+			k
+		\end{smallmatrix}\right\}$  
+		maneras, porque cada una de las 
+		$\left\{\begin{smallmatrix}
+			n-1\\
+			k
+		\end{smallmatrix}\right\}$
+		formas de distribuir los $n-1$ objetos dan $k$ subconjunto en los que podemos colocar el n-\'esimo
+		objeto.
+		De ah\'i que:
+		
+		$$\left\{\begin{smallmatrix}
+			n\\
+			k
+		\end{smallmatrix}\right\}
+		= 
+		k\left\{\begin{smallmatrix}
+			n-1\\
+			k
+		\end{smallmatrix}\right\}
+		+
+		\left\{\begin{smallmatrix}
+			n-1\\
+			k-1
+		\end{smallmatrix}\right\} 
+		$$
+    }
+    \item{
+        $\left[\begin{smallmatrix}
+			n\\
+			k
+		\end{smallmatrix}\right]$
+		representa igualmente el n\'umero de permutaciones de $n$ elementos que contienen exactamente
+		$k$ ciclos. Por tanto
+		$$
+		\sum_{k=0}^n
+		\left[\begin{smallmatrix}
+			n\\
+			k
+		\end{smallmatrix}\right]
+	    = n!	
+		$$ para todo $n\geq0$ 
+    }
+    
+\end{itemize}
+

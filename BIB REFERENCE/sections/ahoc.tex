@@ -1,0 +1,53 @@
+\begin{itemize}
+    \item{
+		\textbf{Estructura:}
+		El Aho-Corasick est\'a compuesto por las siguientes tres funciones:
+		\begin{itemize}
+			\item{
+				\textbf{Go To:}
+				La funci\'on $g(s, c)$ que simplemente sigue las aristas en un trie formado por todos los 
+				patrones dados. El nodo $u$ es el padre de $g(u, c)$ en el trie y la arista entre ellos 
+				est\'a etiquetada con el caracter $c$.
+			}
+			\item{
+				\textbf{Failure:}
+				Esta funci\'on $f(s)$ guarda todas las aristas correspondientes a cuando el caracter actual 
+				no tiene una arista en el \'arbol.
+		    }
+		    \item{
+				\textbf{Salida:}
+				La funci\'on $o(s)$ que guarda los \'indices de todos patrones al final del estado actual. 
+		    }
+		\end{itemize} 
+    }
+    \item{
+		\textbf{Preprocesamiento:}
+		
+		\begin{itemize}
+			\item{
+				Primero se construye un trie con todas los patrones (funci\'on $g$). 
+			}
+			\item{
+			    Luego construimos la funci\'on de fallo $f$. Para un estado encontramos el sufijo propio 
+			    m\'as largo que es tambi\'en prefijo de alg\'un patr\'on, o sea, que tiene un nodo
+			    dentro del trie que lo representa. Esto se hace con un BFS. 
+			}
+			\item{
+				Para calcular $f(u)$ se busca el primer se hace $w$ tal que $g(w, )$ 	
+			}
+			\item{
+				La funci\'on de salida $o(u) = o(u) \cup o(f(u))$. Esto se hace porque los patrones reconocidos 
+				en $f(u)$, y solo esos, son sufijos propios de la cadena que representa el nodo $u$, y ser\'an
+				entonces reconocidos tambi\'en en el estado $u$.  
+			}
+			\item{
+				\textbf{}
+				
+			}
+			\item{
+				\textbf{}
+				
+			}
+		\end{itemize} 
+    }
+\end{itemize}

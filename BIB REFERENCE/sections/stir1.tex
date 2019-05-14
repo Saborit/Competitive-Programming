@@ -1,0 +1,68 @@
+\begin{itemize}
+    \item{
+		El n\'umero de Stirling de primer tipo
+		$\left[\begin{smallmatrix}
+			n\\
+			k
+		\end{smallmatrix}\right]$ cuenta la cantidad de formas de organizar $n$
+		objetos en $k$ ciclos. Estos ciclos son permutaciones c\'iclicas, como los 
+		collares. O sea, si $[A,B,C,D]$ es un ciclo, entonces 
+		$[A,B,C,D] = [B,C,D,A] = [C,D,A,B] = [D,A,B,C]$
+    }
+    \item{
+		Se cumple que:
+		
+		\begin{itemize} 
+			\item{
+			     $\left[\begin{smallmatrix}
+					n\\
+					1
+				 \end{smallmatrix}\right] = (n-1)!$ para $n > 0$
+			}
+			\item{
+				$\left[\begin{smallmatrix}
+					n\\
+					k
+				\end{smallmatrix}\right]
+				\geq
+				\left\{\begin{smallmatrix}
+					n\\
+					k
+				\end{smallmatrix}\right\}$ para enteros $n, k \geq 0$
+		    }
+		\end{itemize} 
+    }
+    \item{
+		 Cada organizaci\'on de $n$ objetos en $k$ ciclos, o coloca el \'ultimo objeto
+		 en un ciclo \'el solo (de 
+		 $\left[\begin{smallmatrix}
+			n-1\\
+			k-1
+		\end{smallmatrix}\right]$
+		 maneras), o inserta este en una de los
+		 $\left[\begin{smallmatrix}
+			n-1\\
+			k
+		\end{smallmatrix}\right]$  
+		configuraciones de los primeros $n-1$ objetos. En el segundo caso hay $n-1$ maneras de 
+		hacer la inserci\'on. (No es dif\'icil verificar que hay $j$ formas de hacer una inserci\'on 
+		en un ciclo de taman\~no $j$; y sumando todas las jotas da un total de $n-1$ formas) 
+		De aqu\'i:
+		$$
+		\left[\begin{smallmatrix}
+			n\\
+			k
+		\end{smallmatrix}\right]
+		=
+		(n-1) \left[\begin{smallmatrix}
+			n-1\\
+			k
+		\end{smallmatrix}\right]
+		+
+		\left[\begin{smallmatrix}
+			n-1\\
+			k-1
+		\end{smallmatrix}\right]
+		$$ 
+    }
+\end{itemize}

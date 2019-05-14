@@ -1,0 +1,35 @@
+\textbf{Definici\'on}
+\begin{itemize}
+	\item{ es un v\'ertice tal, que si se elimina junto a todas sus aristas adyacentes, causa que el 
+		grafo se desconecte. }
+	\item{ un grafo que no tiene puntos de articulaci\'on es una componente biconexa}
+	\item{ si un nodo $v$ tiene un decendiente en el \'arbol del DFS, del que sale un back edge hacia 
+		un ancestro de $v$ (o sea, se forma un ciclo), este nodo no puede ser un punto de articulaci\'on, 
+		porque no es obligatorio pasar por \'el para llegar a sus hijos .
+	}
+\end{itemize}
+
+\textbf{Algoritmo Hopcroft-Tarjan que Encuentra Puntos de Articulaci\'on}
+\begin{itemize}
+	\item{ 
+		a medida que corremos el DFS, llenamos dos arreglos que nos ayudar\'an a clasificar las aristas: $dt[]$ y
+		$low[]$ . $dt[u]$ guarda el n\'umero de orden del nodo $u$ en el DFS y $low[u]$ guarda el menor $dt[]$ de un nodo en el
+		sub\'arbol del DFS de $u$, al que se puede llegar desde $u$. 
+	}
+	\item{
+		Al principio $low[u] = dt[u]$. Entonces si hay un ciclo, o sea un back edge, $low[u]$ se puede hacer m\'as peque\'no. 
+		N\'otese que si hay una arista hacia atr\'as (back edge) hacia el padre $p_u$ de $u$ no se actualiza $low[u]$ con $dt[pu]$. 
+		O sea que los ciclos que cuentan son los que tienen $3$ aristas o m\'as.
+    }
+    \item{
+		Cuando se est\'a en el v\'ertice $u$ que tiene a $v$ como un v\'ertice adyacente y $low[v] \geq dt[u]$ entonces $u$ es un
+		punto de articulaci\'on. Esto es porque el hecho de que $low[v]$ no es menor que el $dt[u]$ implica que no hay
+		back edge desde $v$ que pueda alcanzar a otro v\'ertice $w$ con menor $dt[w]$ que $dt[u]$. Un nodo $w$ con
+		menor $dt[w]$ que $u$ implica que $w$ es ancestro de $u$ en el árbol del DFS. Esto significa que para llegar a un ancestro(s) 
+		de $u$ desde $v$ hay que pasar por el v\'ertice $u$. Entonces, quitarlo causa que el grafo se desconecte.
+    }
+    \item{
+		Caso especial: la ra\'iz del \'arbol del DFS, es un punto de articulaci\'on si y solo si tiene m\'as de un hijo.
+    }
+\end{itemize}
+

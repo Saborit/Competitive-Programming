@@ -1,0 +1,40 @@
+\begin{itemize}
+    \item{
+		\textbf{Variaciones sin Repeticion:}
+		Se dan $n$ objetos. Se forman todas las distribuciones ordenadas de los $k$ objetos. 
+		El n\'umero de distribuciones es $$V_k^n = \frac{n!}{(n-k)!}$$
+    }
+    \item{
+		\textbf{Variaciones con Repetici\'on:}
+		Se dan objetos que pertenecen a $n$ formas distintas. Se forman todas las
+		distribuciones ordenadas de $k$ objetos en las cuales pueden figurar
+		objetos repetidos. Dos distribuciones se consideran iguales si en cada
+		posici\'on tienen objetos iguales respectivamente. El nu\'mero de estas
+        distribuciones es $${\overline{V}}_k^n = n^k$$
+    }
+    \item{
+		\textbf{Permutaciones sin Repetici\'on:}
+			Se dan $n$ objetos. Se forman todas las distribuciones ordenadas de los $n$
+			objetos. El n\'umero de distribuciones es $$P_n = n!$$
+    }
+    \item{
+		\textbf{Permutaciones con Repetici\'on:}
+			Se dan $n$ objetos que pertenecen a $k$ clases. Se forman todas las distribuciones 
+			ordenadas de los $n$ objetos. Los objetos de una misma clase son iguales y su cantidad 
+			es $n_1, n_2, \cdots, n_k$ respectivamente, de tal forma que $n_1 + n_2+ \cdots + n_k = n$. 
+			El n\'umero de distribuciones es
+			$$ P_(n_1, n_2, \cdots n_k) = \frac{n!}{n_1! n_2! \cdots n_k!} $$
+    }
+    \item{
+		\textbf{Combinaciones sin Repetici\'on:}
+		Se dan $n$ objetos y se quieren separar en dos grupos, uno de $k$ objetos y el otro de $n-k$. 
+		El n\'umero de maneras de hacerlo es
+		$$ C^n_k = \frac{n!}{k! (n-k)!} $$ 
+    }
+    \item{
+		\textbf{Combinaciones con Repetici\'on:}
+		Se tienen objetos de $n$ tipos diferentes. De cu\'antas formas podemos tomar $k$ objetos sin importar 
+		que tomemos objetos de un mismo tipo.
+		$$ \overline{C}_k^n = C_k^{n+k-1} $$
+    }
+\end{itemize}

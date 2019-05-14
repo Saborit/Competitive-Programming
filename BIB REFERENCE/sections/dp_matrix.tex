@@ -1,0 +1,22 @@
+\begin{itemize}
+    \item{
+		Esta t\'ecnica puede ser usada en recurrencias de la forma
+		$$ f(n, s_i) = \sum_{j=1}^k {c_{i, j} \cdot f(n-1, s_j)}$$ 
+		donde $s_1, s_2, \cdots s_k $ son los $k$ estados donde puede escontrarse nuestro sistema
+		y $n$ representa una condicion del estado adicional, que no influye en las transiciones entre 
+		los $k$ estados $s_i$. 
+    }
+    \item{
+		Para resolver tal recursi\'on definimos una matriz de trnasiciones $M$ donde cada elemento 
+		$m_{i, j} = c_{i, j}$ o sea el ``peso" de la transici\'on desde el estado $i$ al $j$. 
+    }
+    \item{
+		Ahora consid\'erese la matriz $M^{n-1}$. La suma de todos los elemetos el la fila $i$ nos dar\'a 
+		$f(n, s_i)$, asumiendo que $ \forall i : f(0, i) = 0 $  
+	}
+	\item{
+		Este proceso es similar a calcular la cantidad de caminos de largo $n$ en un grafo. Para ello elevamos la 
+		matriz de adyacencia al exponente $n$ y el valor en la fila $i$ columna $j$ de la matriz resultante es el 
+		n\'umero de caminos de largo $n$ desde el v\'ertice $i$ al $j$. 
+    }
+\end{itemize}

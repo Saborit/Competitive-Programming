@@ -1,0 +1,201 @@
+\begin{itemize}
+    \item{
+		\textbf{Propiedades de los Juegos Imparciales}
+		\begin{itemize}
+			\item{
+				Hay dos jugadores y el conjunto de posiciones es finito.
+			}
+			\item{
+				Ambos jugadores alternan turnos y el conjunto de jugadas posibles depende de la posici\'on 
+				y no de que jugador est\'a en turno.
+			}
+			\item{
+				Si es un juego normal (normal play), el juego termina cuando uno de los jugadores no puede 
+				hacer un movimiento, el jugador que no puede mover pierde; si se juega "misere", el que no 
+				puede mover gana. 
+			}
+		\end{itemize}
+    }
+    
+    \item{
+		\textbf{Posiciones en los Juegos Imparciales}
+		\begin{itemize}
+			\item{
+				El juego est\'a en una P-posici\'on si se asegura una victoria para el jugador $P$revio.
+			}
+			\item{
+				El juego est\'a en una N-Posici\'on si se asegura una victoria para el pr\'oximo jugador($N$ext).
+			}
+			\item{
+				Una posici\'on $A$ es seguidora de otra posici\'on $B$ si el jugador en turno puede ir de $B$ a $A$ 
+				con su movimiento. Al conjunto de las posiciones seguidoras de $A$ se las denota $F(A)$.
+			}
+			\item{
+				Una posici\'on es terminal si no tiene ninguna seguidora, o sea el juego termina si se llega a ella.	
+			}
+		\end{itemize}
+    }
+    
+    \item{
+		\textbf{Inducci\'on Hacia Atr\'as}
+		\begin{itemize}
+			\item{
+				Etiquete cada posici\'on terminal como $P$.
+			}
+			\item{
+				Etiquete cada posici\'on que tiene como seguidora a una $P$ como $N$.
+			}
+			\item{
+				Etiquete cada posici\'on que solo tiene como seguidoras a N-posiciones como P-posiciones.
+			}
+			\item{
+				Si se juega misere, en el paso $1$, cada posicion terminal es $N$.
+			}
+		\end{itemize}
+    }
+     
+    \item{
+		\textbf{Nim y Suma Nim}
+		\begin{itemize}
+			\item{
+				El Nim es un juego donde se cuenta con $n$ montones de fichas. Dos jugadores alternan movimientos 
+				donde en cada uno pueden tomar un n\'umero de fichas de un mont\'on. Quien no pueda tomar una ficha 
+				(cuando no quede ninguna), pierde.
+			}
+			\item{
+				La suma nim de uno o varios n\'umeros es simplemente el $xor$ de estos. 
+			}
+			\item{
+				Cada juego combinatorio imparcial se comporta como un juego de nim.
+			}
+			\item{
+				En nim, una posici\'on es $P$ si y solo si la suma nim de los mont\'iculos es igual a cero.
+			}
+		\end{itemize}
+    }
+    
+    \item{
+		\textbf{Poker Nim y Las Jugadas Reversibles}
+		\begin{itemize}
+			\item{
+				El Poker Nim es esencialmente el mismo juego del nim pero tambi\'en se puede adicionar fichas a los mot\'iculos. 
+			}
+			\item{
+				Cada vez que el oponente adicione fichas, el jugador puede sustraer la misma cantidad. Es una jugada reversible.
+			}
+		\end{itemize}
+    }
+    
+    \item{
+		\textbf{Juegos en Grafos Dirigidos}
+		\begin{itemize}
+			\item{
+				Un juego puede verse como un grafo dirigido donde los nodos son las posiciones y las aristas las jugadas.
+			}
+			\item{
+				Desde cada nodo, hay una arista a cada uno de los nodos correspondientes a sus seguidores.			
+			}
+		\end{itemize}
+    }
+    \item{
+		\textbf{Funci\'on Sprage-Grundy}
+		\begin{itemize}
+			\item{
+				Es una funci\'on $G$ que le asigna a cada nodo del grafo del juego, un n\'umero de tal forma que:
+				$$ G(x) = min \left\{ n \geq 0 \colon n \neq G(y), \forall y \in F(x)  \right\} $$
+				o sea, $G(x)$ es el menor entero que no figura entre los valores Grundy correspondientes a las 
+				posiciones seguidoras de $x$.
+			}
+			\item{
+				El valor de la funci\'on Grundy para las posiciones terminales es cero.
+			}
+			\item{
+				Una posici\'on es perdedora para el jugador en turno si y solo si el valor Grundy es cero.
+			}
+		\end{itemize}
+    }
+    \item{
+		\textbf{Suma Disyuntiva de Juegos Combinatorios}\\
+				Dados varios juegos combinatorios, se puede formar un nuevo juego combinando estos, jugando 
+				bajo las siguientes reglas:
+		\begin{itemize}
+			\item{
+				Se da una posicion inicial para cada uno de los juegos.
+			}
+			\item{
+				Los jugadores alternan jugadas. Una jugada consiste en seleccionar uno o varios de los subjuegos y 
+				hacer una jugada legal en ellos, dejando igual los dem\'as. 
+			}
+			\item{
+				Se llega a una posici\'on terminal cuando no se puede hacer una jugada en ninguno de los subjuegos.  
+			}
+		\end{itemize}
+    }
+    \item{
+		\textbf{Reglas Generales de la Suma de Juegos}
+		\begin{itemize}
+			\item{
+				\textbf{Si el jugador en turno elige un juego y hace una jugada en este}: Se aplica el Teorema Sprague-Grundy.
+			}
+			\item{
+				\textbf{Si el jugador en turno elige un conjunto no vac\'io de juegos (posiblemente todos) y hace una jugada 
+				en todos ellos}: Una posici\'on es perdedora si y solo si cada juego est\'a en una posici\'on perdedora.
+			}
+			\item{
+				\textbf{Si el jugador en turno elige un subconjunto propio (no vac\'io, pero no todos) de juegos y hace una jugada 
+				en todos ellos}: La posici\'on es perdedora ssi todos los valores Grundy de los juegos son iguales.
+			}
+			\item{
+				\textbf{Si el jugador debe jugar en todos los juegos y pierde si no puede mover en alguno}: Una posici\'on es perdedora 
+				ssi alguno de los juegos esta en una posici\'on perdedora.
+			}
+		\end{itemize}
+    }
+    \item{
+		\textbf{Propiedades de la Suma de Juegos}
+		\begin{itemize}
+			\item{
+				 \textbf{Teorema Sprague-Grundy}: Si $G_i$ es la funci\'on Grundy para cada 
+				 grafo $i$, con $1 \leq i \leq n $, entonces el grafo de la suma de los $n$ juegos 
+				 tiene funci\'on Sprague-Grundy $G$ tal que 
+				 $$ G(x) = G_1(x) \oplus G_2(x) \oplus \cdots \oplus G_n(x) $$ 
+				 o sea, la suma nim de las funciones.
+			}
+			\item{
+				\textbf{Producto Paralelo}: Si el jugador en turno debe hacer una jugada legal en 
+				cada uno de los subjuegos, el valor de la funci\'on Grundy es el m\'inimo de las 
+				funciones Grundy de cada posici\'on de los juegos componentes. 
+			}
+			\item{
+				\textbf{Nim de Moore}: La suma de orden $p$ de varios juegos, es la suma disyuntiva 
+				en la cual un jugador debe hacer una jugada legal en al menos uno de los subjuegos 
+				y en a lo mas $p$ juegos. La suma usual es de orden $1$. La suma de orden $p$ se calcula 
+				tomando la extensi\'on binaria de los tama\~nos. Se calculan los valores $w_l$  como
+				$$ w_l = ((n_1)_l + (n_2)_l + \cdots + (n_k)_l) mod (p+1) $$
+				donde $(n_i)_l$ es el bit l-\'esimo del i-\'esimo tama\~no de un mont\'iculo. 
+			}
+		\end{itemize}
+    }
+    \item{
+		\textbf{El Nim de Lasker y los Juegos Take-and-Break}
+		\begin{itemize}
+			\item{
+				En el Nim de Emanuel Lasker, los jugadores tienen otra posible jugada: dividir una pila 
+				en dos pilas no vac\'ias, sin quitar ninguna ficha del juego.
+			}
+			\item{
+				Se calcula la funci\'on Sprague-Grundy para este juego pero teniendo en cuenta que al hacer 
+				una jugada en un mont\'iculo, las posiciones seguidoras de la actual, ser\'an no solamente 
+				las correspondientes a los mont\'iculos menores, sino tambi\'en las de dividir un mot\'iculo 
+				en dos.
+			}
+			\item{
+				Por ejemplo $G(0) = 0$ y $G(1) = 1$. Los seguidores de $2$ son $0$, $1$, y $(1, 1)$; sus valores 
+				Grundy son $0$, $1$, y el valor de la suma nim de los valores Grundy: $G(1) \oplus G(1) = 0$. 
+				El valor Grundy es $G(2) = 2$. La posicion $3$ tiene como seguidores a $0$, $1$, $2$ y $(1, 2)$; 
+				$G(3) = 4$, mientras que la $4$ tiene se seguidores a $0$, $1$, $2$, $(1, 3)$, $(2, 2)$. $G(4) = 3$. 
+				Este patron se repite en todo el grafo.       
+			}
+		\end{itemize}
+    }
+\end{itemize}

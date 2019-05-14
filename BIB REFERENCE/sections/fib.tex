@@ -1,0 +1,35 @@
+\begin{itemize}
+	\item{\textbf{Teorema de Zeckendorf:} Cada entero positivo puede ser escrito de forma \'unica como la suma 
+		de uno o m\'as n\'umeros de Fibonnacci tal que la suma no incluya ning\'un par de n\'umeros de Fibonacci consecutivos.
+	}
+	\item{\textbf{Per\'iodo de Pisano:} la(s) ultima(s) una/dos/tres/cuatro cifra(s) de un n\'umero de Fibonacci se 
+	    repiten con un per\'iodo de $60$/$300$/$1500$/$15000$, respectivamente.
+	}
+	\item{\textbf{F\'ormula de Binet:}
+		$$F_n = \frac{1}{\sqrt{5}} \left( {\left( { \frac{1 + \sqrt{5}}{2} }\right)^{n} - {\left( { \frac{1 - \sqrt{5}}{2} }\right)^{n} }} \right)$$
+	}
+	\item{\textbf{Identidades:}
+		\begin{itemize}
+			\item{$\sum_{i=1}^{n}F_i = F_{n+1} - 1$}
+		    \item{${F_{n+m}} = F_{m+1} F_n + F_m F_{n-1}$}
+		    \item{$F_m F_{n+1} - F_{m+1} F_n = (-1)^n F_{m-n}$}
+		    \item{$F_{2n} = F^2_n + 2 F_n F_{n-1}$}
+		    \item{$F_0^2 + F_1^2 + F_2^2 + \cdots + F_n^2 = F_n F_{n+1}$}
+		    \item{$gcd(F_n, F_m) = F_{gcd(n, m)}$}
+		    \item{
+		        Para calcular el $n$-\'esimo t\'ermino en tiempo logar\'itmico
+		        
+				%~ Matrices
+				\begin{gather*}
+					{\begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix}} ^ n
+					=
+					\begin{bmatrix}
+						F_{n+1} & F_n \\
+						F_n & F_{n-1}
+					\end{bmatrix}
+				\end{gather*}
+		    }		
+		\end{itemize}
+	}
+\end{itemize}
+

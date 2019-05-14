@@ -1,0 +1,98 @@
+\begin{itemize}
+    \item{
+		\textbf{Teorema:}
+		Sean $m_1, m_2, \cdots m_n $  enteros mayores que $1$ y primos relativos entre s\'i, y 
+		$a_1, a_2, \cdots a_n$ enteros cualesquiera, entonces existe una soluci\'on $x$ para 
+		las congruencias simult\'aneas
+		
+		\begin{equation*}
+			\left \{
+				\begin{aligned}
+					x \equiv a_1 (mod\text{ } m_1)\\
+					x \equiv a_2 (mod\text{ } m_2)\\
+					\cdots\cdots\cdots\cdots\cdots\cdot\cdot\\
+					x \equiv a_n (mod\text{ } m_n)\\	
+				\end{aligned}
+			\right.
+		\end{equation*}
+	    si $x$ y $x'$ son dos soluciones, estonces $x\equiv x' (mod\text{ } M)$ donde $M = m_1 m_2 \cdots m_n$ 	
+    }
+    \item{
+		\textbf{M\'etodos con M\'odulos No Necesariamente Coprimos:}\\
+		Para dos ecuaciones tenemos
+		
+		\begin{equation*}
+			\left \{
+				\begin{aligned}
+					x \equiv a_1 (mod\text{ } m_1)\\
+					x \equiv a_2 (mod\text{ } m_2)\\
+				\end{aligned}
+			\right.
+		\end{equation*}
+		
+		Aqu\'i $m_1$ y $m_2$ no necesariamente son coprimos.\\
+		Este sistema de congruencias implica que
+		
+		\begin{equation*}
+			\left \{
+				\begin{aligned}
+					x = a_1 + m_1 k_1\\
+					x = a_2 + m_2 k_2\\
+				\end{aligned}
+			\right.
+		\end{equation*}
+		 
+		para unos enteros $k_1, k_2$. \\
+		Igualando los miembros derechos de la ecuaciones, tenemos que 
+		$$ a_1 + m_1 k_1 = a_2 + m_2 k_2$$ 
+		$$ m_1(-k_1) + m_2 k_2 = a_1 - a_2$$
+		
+		Ya que conocemos los valores de $a_1, a_2, m_1$ y $m_2$, solo hay que resolver una ecuaci\'on
+		diof\'antica. Sea $d = gcd(m_1, m_2)$, sabemos que divide el primer miembro de la ecuaci\'on, 
+		as\'i que para que haya soluciones, debe dividir tambi\'en al segundo. \\
+		Usando el Algoritmo Extendido de Euclides, podemos encontrar un par $(x', y')$ tal que 
+		$m_1 x' + m_2 y' = d $ . Luego multiplicamos ambos miembros por $\frac{a_1-a_2}{d}$, obteniendo
+		
+		$$m_1 x' \frac{a_1-a_2}{d} + m_2 y' \frac{a_1-a_2}{d} = a_1 - a_2 $$ 
+		
+		Entonces $k_1 = -x' \frac{a_1-a_2}{d} $ y $ k_2 = y' \frac{a_1-a_2}{d} $ Ahora podemos sustituir 
+		$k_1$ en el segundo sistema para obtener $$ x = a_1 + x' \frac{a_2-a_1}{d} m_1 $$ 		 
+    }
+    \item{
+		\textbf{Infinitas Soluciones}\\
+		Digamos que tenemos dos soluciones $x_1$ y $x_2$. Ahora tenemos que $x_1 \equiv a_1 (mod\text{ } m_1)$ 
+		y que $x_2 \equiv a_1 (mod\text{ } m_1)$. Entonces por transitividad de congruencias tenemos que 
+		$ x_1 \equiv x_2 (mod\text{ } m_1) $ y haciendo lo mismo para $m_2$, $ x_1 \equiv x_2 (mod\text{ } m_2) $. \\
+		Esas dos congruencias son equivalentes a $ x_1 \equiv x_2 (mod\text{ } lcm(m_1, m_2)) $ as\'i que las 
+		infinitas soluciones son $x = x_0 + k \cdot lcm(m_1, m_2)$ donde $x_0$ es la soluci\'on original del
+		sistema y $k \in \mathbb{Z}$
+		
+    }
+    \item{
+		\textbf{Implementaci\'on:}\\
+		Ya que los n\'umeros pueden llegar a ser un poco grandes, debemos hacer los c\'alculos m\'odulo $l = lcm(m_1, m_2)$.
+		Entonces
+		
+		$$ x = \left(a_1 + \left( \left(x' \cdot \frac{a_1 - a_1}{d}\right) mod\text{ }l \right) \cdot m_1 \text{ } mod\text{ }l\right) mod\text{ }l  $$
+		
+		Si $m_1, m_2 \leq 10^9$, entonces $lcm(m_1, m_2) \leq 10^{18}$, $x' \leq 10^9$, $\frac{a_2 - a_1}{d} \leq 10^9$
+		Podemos calcular $x' \cdot \frac{a_2 - a_1}{d} $, pero ya que e\'l y $l$ pueden ser hasta $10^{18}$, la multiplicaci\'on
+		final por $m_1$ causar\'a un desbordamiento. Para manejar este problema usaremos la propiedad:
+		$$ c a \text{ mod } cb = c( a \text{ mod 	} b )$$
+		Sabiendo que $lcm(m_1, m_2) = \frac{m_2}{d} \cdot m_1$ y tomando en la propiedad anterior $a = x' \cdot \frac{a_2-a_1}{d}$, 
+		$b = \frac{m_2}{d}$ y $c = m_1$, tenemos que 
+		$\left( x' \cdot \frac{a_2 - a_1}{d} \text{ mod } l \right) \cdot m_1 \text{ mod } l$ es igual a:
+		$$ \left( x' \cdot \frac{a_2 - a_1}{d} \text{ mod } \frac{m_2}{d} \right) \cdot m_1 \text{ mod }l$$
+		Ya que $\frac{m_2}{d} \leq 10^9$, es problema de desbordamiento est\'a solucionado.
+    }
+    \item{
+		\textbf{Con M\'as de Dos Relaciones de Congruencias:}\\
+			Digamos que tenemos $t$ congruencias de la forma 
+			$$ x \equiv a_i \text{ mod } m_i \text{, para } i = 1, 2, \cdots, t$$
+			Entonces podemos mezclar las relaciones una por una. Luego de resolver el sistema formado por las primeras dos 
+			relaciones, obtenemos una nueva de la forma 
+			$$ x \equiv s \text{ mod } lcm(m_1, m_2) $$
+			Ahora podemos mezclarla con la tercera, y as\'i sucesivamente... Este algoritmo tiene una complejidad de 
+			$O(t \cdot \log lcm(m_1, m_2, \cdots, m_t))$ 
+    }
+\end{itemize}

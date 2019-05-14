@@ -1,0 +1,21 @@
+\begin{itemize}
+    \item{
+		Apaga el $1$-bit m\'as a la derecha, produciendo $0$ 
+		si no hay (ej. $01011000$ se convierte en $01010000$): 
+		$$ x \wedge (x{-1}) $$
+    }
+    \item{
+		Deja encendido solo el $0$-bit m\'as a la derecha, produciendo $0$ si no hay 
+		(ej. $10100111$ se convierte en $00001000$):
+		$$ \neg x \wedge ( x+1 ) $$
+	}
+	\item{
+		Propaga hacia la derecha el $1$-bit m\'as a la derecha, produciendo todos $1$'s si no hay (ej.,
+		$01011000$ se convierte en $01011111$):
+	    $$ x \vee (x{-1}) $$
+	}
+	\item{
+		Apaga la cadena m\'as a la derecha de $1$-bits (ej. $01011000$ se convierte en $01000000$):
+		$$ ( (x \vee (x{-1})) + 1) \wedge x $$
+	}
+\end{itemize}

@@ -1,0 +1,30 @@
+\begin{itemize}
+    \item{
+		\textbf{El Problema:} Tenemos una matriz de costos $w_{i,j}$ y tama\~no $n\times n$. Hay que calcular 
+		los valores de la funci\'on $f$ tal que:
+		
+		\begin{itemize}
+			\item{ $ f(i,i) = w_{i, i} = 0 $ }
+			\item{$ f(i, j) = w_{i,j} + \substack{\min \\ i < k \leq j}\{ f(i, k-1) + f(k, j)\} $}
+		\end{itemize}
+		
+		para $i<j$, porque no consideramos los valores de $f(i,j)$ para $i>j$. \\
+		Usualmente $f(1, n)$ es el resultado deseado. El algoritmo en $O(n^3)$ puede ser optimizado a $O(n^2)$
+    }
+    \item{
+		\textbf{Quadrangle Inequalitiy (QI): } Si $w$ es tal que $w_{a,c} + w_{b,d} \leq w_{b,c} + w_{a,d}$ 
+		con $a \leq b \leq c \leq d$, se dice que satisface la desigualdad cuadrangular.
+    }
+    \item{
+		\textbf{Monoton\'ia:} La matriz $w$ es mon\'otona si $ w_{b,c} \leq w_{a,d} $ con $a \leq b \leq c \leq d$. 
+    }
+    \item{
+		Definimos la matrix $k$, donde $k_{i,j} = \min\{ t\text{ }|\text{ }f(i,j) = w_{i,j} + f(i, t-1) + f(t, j)\}$, donde $i<j$.
+		En particular, se define $k_{i, i} = i$. \\
+		En otras palabras, $k_{i,j}$ es el \'indice $k$ m\'as peque\~no, tal que se logra el m\'inimo en la funci\'on.  
+    }
+    \item{
+		\textbf{Teorema:} Si $w$ cumple con IQ y es mon\'otona, entonces $f$ tambi\'en cumple con IQ. M\'as espec\'ificamente:
+		$ k_{i, j-1} \leq k_{i, j} \leq k_{i+1, j}$ 
+    }
+\end{itemize}

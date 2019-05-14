@@ -1,0 +1,83 @@
+\begin{itemize}
+    \item{
+		\textbf{Definici\'on:}
+		Este m\'etodo resuelve relaciones de recurrencias lineares, o sea, de la forma 
+		$$ f(i) = c_1 \cdot f(i-1) + c_2 \cdot f(i-2) + \cdots + c_k \cdot f(i-k) + d$$
+		donde $k$ es el mayor entero tal que $f(i)$ depende de $f(i-k)$  y $d$ es una constante. 
+	}
+    \item{
+		\textbf{Notaci\'on:} 
+		\begin{itemize}  
+			\item{
+			     $F_i$ es el vector columna de tama\~no $k+1$, formado por los valores 
+			     $f(i), f(i+1), \cdots, f(i+k-1), d$.
+			     %, o sea:
+			     
+			     %~ $$F_i = 
+			     %~ \begin{pmatrix}
+					%~ f(i) 		\\
+					%~ f(i+1)		\\
+				    %~ \vdots		\\
+					%~ f(i+k-1)	\\
+				 %~ \end{pmatrix}
+				 %~ $$
+		    }
+		\end{itemize}  
+    }
+    \item{
+		\textbf{M\'etodo de Resoluci\'on:}
+			\begin{itemize}
+				\item{
+					Determinar $k$ y los valores iniciales de la recursi\'on. Si el n\'umero de estos es menor que $k$
+					hay que calcular los restantes a partir de los que ya se tienen. Se forma el vector $F_1$, de 
+					tama\~no $k+1$:
+					
+					$$F_1 = 
+						\begin{pmatrix}
+							f(1) 		\\
+							f(2)		\\
+							\vdots		\\
+							f(k)		\\
+							d
+						\end{pmatrix}
+					$$
+				}
+				\item{
+					Construir la matriz de transformaci\'on $T$: una matriz cuadrada de lado $k+1$, tal que 
+					$ T \cdot F_i = F_{i+1}$ \\
+					Sean $c_1, c_2, \cdots, c_k$ los coeficientes de la ecuaci\'on recursiva, la matriz $T$ tiene la forma:
+					
+					$$ T = 
+						\begin{pmatrix}
+							0 & 1 & 0 & 0 & \cdots	& 0	& 0	\\
+							0 & 0 & 1 & 0 & \cdots	& 0	& 0 \\
+							0 & 0 & 0 & 1 & \cdots	& 0	& 0 \\
+							\vdots & \vdots &\vdots &\vdots & \ddots & \vdots & \vdots		\\	
+							c_k & c_{k-1} & c_{k-2} & c_{k-3} & \cdots & c_1 & 1				\\
+							0 & 0 & 0 & 0 & \cdots & 0 & 1
+						\end{pmatrix}
+				 	$$
+ 				}
+			\end{itemize}
+    }
+    \item{
+		Calculamos $F_n$ de la siguiente forma:
+		$$ F_n = T^{n-1}F_1 $$ 
+    }
+    \item{
+		\textbf{Condici\'on Dependiente de la Paridad: } 
+		La funci\'on se comporta de forma diferente de acuerdo a la paridad del argumento.
+		Construimos dos matrices $T_{par}$ y $T_{impar}$ tales que:
+		
+		$$ T_{par} \cdot F_i = F_{i+1} \text{, para i par} $$
+		$$ T_{impar} \cdot F_i = F_{i+1} \text{, para i impar} $$ 
+		
+		Ahora construimos tambi\'en la matriz $T = T_{par} \cdot T_{impar}$. Esta es tal que podemos calcular 
+		$F_n$ como:
+		$$ F_n = T^{\lfloor n/2 \rfloor} \cdot F_1 \text{, si n es impar} $$   
+		$$ F_n = T_{impar} \cdot T^{\lfloor (n-1)/2 \rfloor} \cdot F_1 \text{, de otra forma} $$   
+		N\'otese que $T_{par}$ y $T_{impar}$ deben ser del mismo tama\~no. Si no lo son, se deben agregar 
+		coeficientes cero donde corresponda.
+    }
+    
+\end{itemize}

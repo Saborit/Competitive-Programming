@@ -1,0 +1,60 @@
+\begin{itemize}
+    \item{
+		 Si $m$ es un entero positivo y $a$, $b$ y $c$ son enteros, entonces:
+		 \begin{itemize}			
+			\item{
+				$a \equiv a \text{ (mod $m$)}$	
+			}
+			\item{
+				$a \equiv b \text{ (mod $m$)}$ si y solo si $b \equiv a \text{ (mod $m$)}$
+			}
+			\item{
+				si $a \equiv b \text{ (mod $m$)}$ y $b \equiv c \text{ (mod $m$)}$ entonces 
+				$a \equiv c \text{ (mod $m$)}$
+			}
+		 \end{itemize}			
+		 Por consiguiente la congruencia es una relaci\'on de equivalencia.
+    }
+    \item{
+	    Si $m \in \mathbb{Z}_{+}$ y $a, b \in \mathbb{Z}$ con	 $a \equiv b \text{ (mod $m$)}$	
+		entonces $gcd(a, m) = gcd(b, m)$.
+    }
+    \item{
+	    Si $a \equiv b \text{ (mod $m$)}$ entonces $a+c \equiv b+c \text{ (mod $m$)}$, 
+	    $a-c \equiv b-c \text{ (mod $m$)}$ y $ac \equiv bc \text{ (mod $m$)}$.	
+	
+    }
+    \item{
+	    Si $a \equiv b \text{ (mod $m$)}$ y $c \equiv d \text{ (mod $m$)}$ entonces 
+	    $ac \equiv bd \text{ (mod $m$)}$.	
+    }
+    \item{
+	    Si $d = gcd(c, m)$, y $ac \equiv bc \text{ (mod $m$)}$, entonces 
+	    $a \equiv b \text{ (mod $\frac{m}{d}$)}$. En particular, si $c$ y $m$ son primos relativos, 
+	    entonces $a \equiv b \text{ (mod $m$)}$.	
+    }
+    \item{
+	    Si $k \in \mathbb{Z}_{+}$ y $a \equiv b \text{ (mod $m$)}$ entonces $a^k \equiv b^k \text{ (mod $m$)}$.	
+    }
+    \item{
+	    Si $f(x_1, x_2, \cdots, x_n)$ es un polinomio con coeficientes enteros, y 
+	    $a_1, a_2, \cdots, a_n, b_1, b_2, \cdots, b_n$ son enteros que cumplen que $a_i \equiv b_i \text{ (mod $m$)}$
+	    para toda $i \in [1, n]$, entonces $f(a_1, a_2, \cdots, a_n) \equiv f(b_1, b_2, \cdots, b_n) \text{ (mod $m$)}$.	 	
+    }
+    \item{
+        Si todos los $m_i$, con $i \in [1, n]$, son coprimos par a par, y $a \equiv b \text{ (mod $m_i$)}$ 
+        para toda $i$, entonces $a \equiv b \text{ (mod $m_1 m_2 \cdots m_n$)}$. 
+    }
+    \item{
+		Un inverso de $a$ m\'odulo $m$, donde $gcd(a, m) = 1$, puede ser encontrado usando el algoritmo extendido 
+		de Euclides para encontrar los enteros $x$, $y$ tales que $ax + my = 1$. lo que implica que $x$ es un inverso 
+		de $a$ m\'odulo $m$.
+    }
+    %~ \item{
+        %~ \textbf{Encontrar las ra\'ices de un polinomio m\'odulo m:} Primero encontramos las ra\'ices del polinomio
+        %~ m\'odulo $p^r$ para cada potencia de un primo en la representaci\'on can\'onica de $m$ y luego usamos el 
+        %~ Teorema Chino del Resto para encontrar las soluciones m\'odulo $m$. \\
+        %~ Encontrar las soluciones m\'odulo $p^r$ se reduce a primero encontrar las soluciones m\'odulo $p$. En particular,
+        %~ si no hay soluciones de $f(x)$ n\'odulo $p$, no hay soluciones de $f(x)$ m\'odulo $p^r$.  
+    %~ }
+\end{itemize}

@@ -1,0 +1,21 @@
+\begin{itemize}
+    \item{
+         El problema se trata de $n$ personas sentadas en c\'iculo. Comenzando por el primer jugador,
+         se comienza a contar hasta $k$. El k-\'esimo jugador es eliminado. Se comienza a contar por el siguiente 
+         jugador, hasta $k$ con los jugadores que quedan. As\'i hasta un solo jugador se mantenga dentro 
+         del juego. Hay que calcular, dados $n$ y $k$, qui\'en queda de \'ultimo.       
+    }
+    \item{
+		\textbf{Caso Especial:}
+		Cuando $k=2$, usando la representaci\'on binaria del n\'umero $n = \overline{1b_1 b_2 \cdots b_k}$,
+		entonces la respuesta es $\overline{b_1 b_2 \cdots b_k 1}$, es decir, movemos el bit m\'as significativo
+		de $n$ para hacerlo el menos significativo. Esto puede hacerse en $O(1)$.  
+    }
+    \item{
+		Sea $f(n, k)$ la posici\'on del sobreviviente para un c\'irculo de taman\~no $n$ y saltando de $k$ en
+		$k$. Despu\'es de que la k-\'esima persona es eliminada, el taman\~no de c\'irculo disminuye a $n-1$, 
+		y la posici\'on del sobreviviente es $f(n-1, k)$. La relaci\'on recurrente es
+		$$ f(n, k) = (f(n-1, k) + k) \% n $$
+		El caso base es cuando $n=1$, donde tenemos que $f(1, k) = 0$.  
+    }
+\end{itemize}

@@ -1,0 +1,24 @@
+Sea $p_1^{e_1} p_2^{e_2} \cdots p_k^{e_k}$ la representaci\'on can\'onica de $n$:
+    
+\begin{itemize}
+    \item{
+		\textbf{Cantidad de Factores Primos:}
+		Es igual a $e_1 + e_2 + \cdots + e_k$. Un entero $n$ tiene hasta $\log n$ factores primos
+    }
+    \item{
+		\textbf{Cantidad de Divisores:}
+		$n$ tiene $\tau(n) = (e_1 + 1) (e_2 + 1) \cdots (e_k + 1)$ divisores. El n\'umero en el rango $[1, 10^6]$ con m\'as 
+		divisores es $ 720720 $ con $240$ y para ese rango
+		$$ \sum_{i=1}^{10^6} \tau(i) = 13970033 \approx 14M$$ 
+    }
+    \item{
+		\textbf{Suma de los Divisores:}
+		Es igual a 
+		$$ \sigma(n) = \left( \frac{p_1^{e_1 + 1} - 1}{p_1 - 1} \right) \left( \frac{p_2^{e_2 + 1} - 1}{p_2 - 1} \right) 
+		\cdots \left( \frac{p_k^{e_k + 1} - 1}{p_k - 1} \right) $$
+    }
+    \item{
+		\textbf{Producto de los Divisores:}
+		$$\pi(n) = n ^{\frac{1}{2} \tau(n)}$$
+    }
+\end{itemize}

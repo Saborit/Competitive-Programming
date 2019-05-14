@@ -1,0 +1,12 @@
+def div(n):
+	ans = 0
+	i=1
+	while i*i <= n:
+		if n%i==0:
+			ans += 1
+			if i != n/i:
+						ans+=1
+	return ans
+
+print div(5)
+print div(9)

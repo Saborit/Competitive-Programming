@@ -1,0 +1,85 @@
+\begin{itemize}
+    \item{
+		\textbf{Definici\'on:} 
+		Dado un \'arbol con $n$ nodos, un centroide es un nodo cuya eliminaci\'on separa al \'arbol 
+		dado en un bosque, donde cada \'arbol resultante no contiene m\'as de $n/2$ v\'ertices. Para 
+		un \'arbol cualquiera siempre existe al menos un centroide.
+    }
+    
+    \item{
+		\textbf{Propiedades de los Centroides}
+		\begin{itemize}
+			\item{
+				Si llamamos peso de un nodo al n\'umero de v\'ertices en el mayor sub\'arbol de dicho
+				nodo, un nodo con m\'inimo peso es un centroide del \'arbol. 
+			}
+			\item{
+				Cada \'arbol tiene uno o dos centroides. Si un \'arbol tiene dos centroides, entonces 
+				estos est\'an unidos por una arista y la aliminaci\'on de dicha arista deja dos \'arboles
+				de igual cantidad de nodos.
+			}
+			\item{
+				Un v\'ertice es el \'unico centroide de un \'arbol de $n$ v\'ertices si y solo si su peso 
+				es a lo m\'as $\frac{n-1}{2}$. 
+			}
+			\item{
+				Definimos $d(u, v)$ como el largo del camino m\'as corto entre $u$ y $v$. La distancia del 
+				v\'ertice $u$, denotado $L(u)$, es la suma de todas las $d(u, v)$ para cada $v$, v\'ertice 
+				del \'arbol.
+				$$ L(u) = \sum_{v \in T} d(u, v) $$
+				Un centroide del \'arbol es tal que $L(u)$ es m\'inimo.   
+		    }
+			\item{
+				Si modelamos con el \'arbol, un sistema de l\'ineas telef\'onicas, donde cada arista representa
+				un sector de l\'inea y los caminos llamadas entre los v\'ertices finales. Se asume que, al mismo 
+				tiempo, un v\'ertice puede estar envuelto en solo una llamada. \\ 
+				Definimos el ``switchboard number"  del v\'ertice $v$, $sb(v)$, como el m\'aximo n\'umero de llamadas
+				a trav\'es de $v$ en un momento determinado. Los centroides de del \'arbol en tal modelo, cumplen 
+				que $sb(v)$ es m\'aximo.    
+			}
+		\end{itemize}
+		
+		\item{
+			\textbf{Encontrar el Centroide de un \'Arbol:}
+              Una manera de encontrar el centroide es elegir una ra\'iz arbitraria, entonces hacer un BFS calculando 
+              la cantidad de nodos en cada sub\'arbol. Luego nos movemos, comenzando desde la ra\'iz, al sub\'arbol
+              de mayor tama\~no hasta que lleguemos a un v\'ertice cuyo sub\'arbol no tenga m\'as de $n/2$ nodos. Este
+              nodo es el centroide del \'arbol.
+		}
+		
+		\item{
+			\textbf{Descomponiendo el \'Arbol para Formar un \'Arbol de Centroides:}
+			Cuando se elimina el centroide, el \'arbol original de descompone en un n\'umero de \'arboles
+			diferentes, cada uno con menos de $n/2$ nodos. Tomamos este centroide como la ra\'iz de un nuevo 
+			\'arbol al que llamaremos ``centroid tree" o \'arbol de centroides. Entonces hacemos lo mismo 
+			recursivamente para los \'arboles que se formaron e incluimos los centroides de estos como hijos
+			de nuestra ra\'iz. La recursi\'on para cuando el \'arbol est\'a formado por un solo v\'ertice.
+			As\'i un nuevo centroid tree se forma a partir de nuestro \'arbol original.   
+		}
+		\item{
+			\textbf{Propiedades de los \'Arboles de Centroides}
+			\begin{itemize}
+				\item{
+					El \'abol formado contiene los $n$ nodos del \'arbol original.
+				}
+				\item{
+					La altura del \'arbol de centroides es $O(\log n)$ 
+				}
+				\item{
+					Consider any two arbitrary vertices A and B and the path between them (in the original tree) 
+					can be broken down into A-->C and C-->B where C is LCA of A and B in the centroid tree.
+					
+					Consid\'erese cualesquiera dos v\'ertices $u$ y $v$ y el camino entre ellos en el \'arbol original.
+					Dicho camino $ u \rightarrow v $, puede ser dividido en dos caminos $ u \rightarrow lca(u, v) $
+					y $ lca(u, v) \rightarrow v $, donde $ lca(u, v) $ es el ancestro com\'un m\'as bajo entre $u$ y $v$
+					en el centroid tree.   
+				}
+				\item{
+					Se descompone el \'arbol original en $O(n \log n )$ caminos diferentes (desde cada centroide 
+					a todos los vertices en su sub\'arbol en el centroid tree) tales que cualquier camino en el \'arbol 
+					original es la concatenaci\'on de dos caminos diferentes de este conjunto.  
+			   }
+			\end{itemize}
+		}
+    }
+\end{itemize}

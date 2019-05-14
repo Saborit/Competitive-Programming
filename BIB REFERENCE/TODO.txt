@@ -1,0 +1,10 @@
+suma con stirlings 
+mutliples errores  - formulas de las ecuaciones recurrentes
+signos de menos
+poner cursiva a la suma de juegos 
+torres de hanoi concrete maths
+seguir con los stirling numbers
+
+implememntar la desig. cuadrangular
+
+-e "$pdflatex=q/pdflatex -synctex=1 -interaction=nonstopmode/"
